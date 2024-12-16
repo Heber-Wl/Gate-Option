@@ -1,0 +1,132 @@
+:root {
+    --font-family: "Josefin Sans", sans-serif;
+    --color-transparent: #00000000;
+    --color-body-bg: #000;
+    --color-text: white;
+    --color-detail: #FF7300;
+    --color-buy: #65a30d;
+    --color-sell: #dc2626;
+    --color-content-bg: linear-gradient(to bottom left, #A8541F, #91410E, #702A00, #511F00, #311300, #150800, #080300, #030100, #000, #000, #000, #010000, #150800, #311300, #511F00, #702A00, #91410E, #A8541F);
+    --color-graph-bg: #1a1f24;
+    --color-graph-border: #101518;
+    --color-graph-title: #a6a6a6;
+    --color-graph-time: #1a1f21;
+    --color-graph-time-hover: #1e2227;
+    --color-graph-time-active-bg: #1e2227;
+    --color-overlay-bg: #00000043;
+    --color-aside-bg: #000000a2;
+    --transition-duration: 0.3s;
+    --transition-duration-hover: 0.5s;
+    --border-radius: 8px;
+    --spacing-small: 0.5rem;
+    --spacing-medium: 1rem;
+    --spacing-large: 2rem;
+    --spacing-xlarge: 2.5rem;
+    --font-size-small: 14px;
+    --font-size-medium: 16px;
+    --font-size-large: 18px;
+    --font-size-xlarge: 24px;
+    --font-size-xxlarge: 25px;
+}
+
+* {
+    font-family: var(--font-family);
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-image: var(--color-content-bg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.main-content {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+}
+
+.sidebar {
+    background: var(--color-aside-bg);
+    position: relative;
+    height: 100vh;
+}
+
+.sidebar__menu {
+    margin-left: var(--spacing-large);
+}
+
+.sidebar__logo {
+    margin-top: var(--spacing-large);
+    max-width: 245px;
+    height: auto;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-medium);
+    margin-top: 19px;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--color-text);
+    transition: background-color var(--transition-duration);
+}
+
+.menu-item__icon {
+    height: var(--font-size-xxlarge);
+    margin-right: var(--spacing-medium);
+}
+
+.menu-item__icon.investir {
+    font-size: 25px !important;
+}
+
+.menu-item__label {
+    font-size: var(--font-size-medium);
+}
+
+.menu-item:hover {
+    background-color: var(--color-detail);
+}
+
+.tabela-mercado {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.tabela-interior {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 75%;
+}
+
+.tabela-mercado table thead th {
+    background-color: #212529;
+    color: #fff;
+    text-align: center;
+    padding: 10px 7px 10px 7px;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.tabela-mercado h2 {
+    color: #fff;
+    text-align: center;
+    font-size: 55px;
+    font-weight: 700;
+}
+
+.tabela-mercado table tbody td {
+    color: #fff;
+    text-align: center;
+    padding: 10px 7px 10px 7px;
+    font-size: 20px;
+    font-weight: 600;
+}

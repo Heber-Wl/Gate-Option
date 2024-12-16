@@ -1,0 +1,13 @@
+a, span, .menu-item {
+    text-decoration: none; /* Remove o sublinhado */
+    border: none; /* Remove bordas, se houver */
+    outline: none; /* Remove o contorno, especialmente em foco */
+    color: inherit; 
+}
+
+a:hover, .menu-item:hover {
+    text-decoration: none; /* Remove o sublinhado */
+    border: none; /* Remove bordas, se houver */
+    outline: none; /* Remove o contorno, especialmente em foco */
+    color: inherit; 
+}

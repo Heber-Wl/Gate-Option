@@ -1,0 +1,25 @@
+.alert.alert-error.alerta {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.alert.alert-success.alerta, .alert.alert-error.alerta {
+    margin: 15px;
+    position: fixed;
+    z-index: 9999;
+    width: 17%;
+    transform: translateX(250%);
+    animation: fadeOut 3.5s ease-out forwards;
+}
+@keyframes fadeOut {
+    0% {
+        opacity: 1; 
+    }
+    90% {
+        opacity: 1; 
+    }
+    100% {
+        opacity: 0; 
+        display: none; 
+    }
+}
