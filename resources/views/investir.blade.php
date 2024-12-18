@@ -63,7 +63,7 @@
                         <option value="1" class="select-option">Petrobrás</option>
                         <option value="2" class="select-option">Itaú Unibanco</option>
                         <option value="3" class="select-option">Vale</option>
-                        <option value="4" class="select-option">Amber</option>
+                        <option value="4" class="select-option">Ambev</option>
                         <option value="5" class="select-option">BTG</option>
                         <option value="6" class="select-option">Banco do Brasil</option>
                         <option value="7" class="select-option">WEG</option>
