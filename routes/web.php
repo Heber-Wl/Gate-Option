@@ -16,4 +16,5 @@ Route::middleware('auth')->group(function () {
     Route::get('/transacoes', [LoginController::class, 'transacoes'])->name('transacoes');
     Route::get('/investir', [LoginController::class, 'investir'])->name('investir');
     Route::post('/investir-empresa', [LoginController::class, 'investirEmpresa'])->name('investirEmpresa');
+    Route::post('/logout', [LoginController::class, 'sair'])->name('sair');
 });

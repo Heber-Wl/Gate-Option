@@ -266,7 +266,7 @@ main {
     border-radius: 18px !important;
 }
 
-.modal-header h5 {
+.modal-title.deposito {
     font-size: 30px;
     font-weight: 600;
 }
@@ -277,10 +277,10 @@ main {
     justify-content: center;
 }
 
-.modal-header {
-    display: flex !important;
-    justify-content: center !important;
-    border: none !important;
+.modal-header.deposito {
+    display: flex ;
+    justify-content: center ;
+    border: none ;
 }
 
 .input-modal.depositar {
@@ -291,12 +291,12 @@ main {
     padding-top: 25px;
 }
 
-.input-modal.depositar label {
+.form-label.deposito {
     font-size: 20px;
     font-weight: 500;
 }
 
-.input-modal.depositar input {
+.form-control.depositar {
     height: 30px;
 }
 
@@ -304,11 +304,12 @@ main {
     padding-bottom: 40px;
 }
 
-.div-btn-depositar button {
-    height: 45px !important;
-    width: 150px !important;
-    background-color: #034107 !important;
-    border: solid 1px #034107 !important;
+.btn.btn-primary.depositar {
+    margin-top: 15px;
+    height: 45px;
+    width: 150px ;
+    background-color: #034107;
+    border: solid 1px #034107;
     border-radius: 15px;
 }
 
@@ -587,6 +588,24 @@ main {
 
 .seta {
     font-size: 25px;
+}
+
+.btn.btn-primary.depositar.sair {
+    background-color: #d9534f;
+    color: #fff;
+    cursor: pointer;
+}
+
+.btn.btn-primary.depositar.sair:hover {
+    background-color: #c9302c;
+}
+
+.form-label.deposito.sair {
+    color: #fff;
+}
+
+.modal-title.deposito.sair {
+    color: #fff;
 }
 
 @media screen and (max-width: 1400px) and (max-height: 1050px) {}
