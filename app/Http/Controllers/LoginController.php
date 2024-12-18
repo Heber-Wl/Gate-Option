@@ -224,4 +224,13 @@ class LoginController extends Controller
             return redirect()->back()->withErrors($e->getMessage());
         }  
     }
+
+    public function sair() {
+
+        Auth::logout();
+        request()->session()->invalidate();
+        request()->session()->regenerateToken();
+
+        return redirect('/');
+    }
 }

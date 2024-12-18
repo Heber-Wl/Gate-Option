@@ -55,15 +55,32 @@
                 <div class="bemvindo">
                     <h4 class="bemv">Bem vindo !</h4>
                     <div class="div-btn-user">
-                        <button type="button" class="btn-user">
-                            <div class="linha-user"  onclick="toggleSair()">
-                                <!-- <img src="../assets/images/paginaInicial/user.png" alt="" class="imguser"> -->
+                        <button type="button" class="btn-user"  data-bs-toggle="modal" data-bs-target="#logoutModal">
+                            <div class="linha-user" >
                                 <svg class="imguser" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="m12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036q-.016-.004-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092q.019.005.029-.008l.004-.014l-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z"/><path fill="white" d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10s10-4.477 10-10S17.523 2 12 2M8.5 9.5a3.5 3.5 0 1 1 7 0a3.5 3.5 0 0 1-7 0m9.758 7.484A7.99 7.99 0 0 1 12 20a7.99 7.99 0 0 1-6.258-3.016C7.363 15.821 9.575 15 12 15s4.637.821 6.258 1.984"/></g></svg>
                                 <label for="" class="lab-user-tex">{{ $user->nome }}</label>
                             </div>
                         </button>
-                        <div class="sair" style="display: none;">
-                            <a href="sair.php" class="btn-sair">Sair</a>
+                     
+                        <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="depositModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title deposito sair" id="depositModalLabel"><span><svg class="imguser sair" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="m12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036q-.016-.004-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092q.019.005.029-.008l.004-.014l-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z"/><path fill="white" d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10s10-4.477 10-10S17.523 2 12 2M8.5 9.5a3.5 3.5 0 1 1 7 0a3.5 3.5 0 0 1-7 0m9.758 7.484A7.99 7.99 0 0 1 12 20a7.99 7.99 0 0 1-6.258-3.016C7.363 15.821 9.575 15 12 15s4.637.821 6.258 1.984"/></g></svg></span> {{ $user->nome}}</h5>
+                                    </div>
+                                    <div class="input-modal depositar">
+                                        <form action="{{ route('sair') }}" method="POST">
+                                            @csrf
+                                            <div class="mb-3 iput">
+                                                <label for="depositAmount" class="form-label deposito sair">Deseja realmente sair da sua conta</label>
+                                            </div>
+                                            <div class="div-btn-depositar">
+                                                <button type="submit" class="btn btn-primary depositar sair" name="submit">Sair</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -78,18 +95,18 @@
                     <div class="modal fade" id="depositModal" tabindex="-1" aria-labelledby="depositModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="depositModalLabel">Depósito</h5>
+                                <div class="modal-header deposito">
+                                    <h5 class="modal-title deposito" id="depositModalLabel">Depósito</h5>
                                 </div>
                                 <div class="input-modal depositar">
                                     <form action="{{ route('depositar') }}" method="POST">
                                         @csrf
                                         <div class="mb-3 iput">
-                                            <label for="depositAmount" class="form-label">Quanto deseja depositar?</label>
+                                            <label for="depositAmount" class="form-label deposito">Quanto deseja depositar?</label>
                                             <input type="number" class="form-control depositar" id="depositAmount" name="depositoInvestir" required>
                                         </div>
                                         <div class="div-btn-depositar">
-                                            <button type="submit" class="btn btn-primary" name="submit">Depositar</button>
+                                            <button type="submit" class="btn btn-primary depositar" name="submit">Depositar</button>
                                         </div>
                                     </form>
                                 </div>
@@ -103,7 +120,6 @@
                 <div class="card-graph">
                     <div class="card-grap-header-title-container">
                         <p class="card-graph-title">Petrobrás</p>
-                        <!-- <p class="card-graph-subtitle">NFLX</p> -->
                     </div>
 
                     <div class="card-grap-header-title-container">
@@ -116,7 +132,6 @@
                 <div class="card-graph">
                     <div class="card-grap-header-title-container">
                         <p class="card-graph-title">Itaú</p>
-                        <!-- <p class="card-graph-subtitle">NFLX</p> -->
                     </div>
 
                     <div class="card-grap-header-title-container">
@@ -130,7 +145,6 @@
                 <div class="card-graph">
                     <div class="card-grap-header-title-container">
                         <p class="card-graph-title">Vale</p>
-                        <!-- <p class="card-graph-subtitle">NFLX</p> -->
                     </div>
 
                     <div class="card-grap-header-title-container">
@@ -323,8 +337,8 @@
     </script>
     <script>
         function toggleSair() {
-            var sairDiv = document.querySelector('.sair');
-            sairDiv.style.display = sairDiv.style.display === 'block' ? 'none' : 'block';
+            const modal = document.getElementById('logoutModal');
+            modal.classList.toggle('hidden');
         }
     </script>
 </body>
